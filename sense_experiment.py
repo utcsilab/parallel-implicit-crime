@@ -203,7 +203,7 @@ def pro_retro_sense_experiment(fn_out=None, data_nm='bart_phantom', snr_db=30, \
         _,image_l2_pro,fksp_l2_pro,nrmse_pro = \
                             do_sense_recon( ksp_upat_pro,image_gt ) 
         if verbose:
-            print('r_pro = %d, nmrse = %f' % (r_p, np.round(nrmse_pro,3)))
+            print('r_pro = %d, nrmse = %f' % (r_p, np.round(nrmse_pro,3)))
 
         for j,r_r in enumerate(r_retro_vec):
                 
@@ -219,5 +219,7 @@ def pro_retro_sense_experiment(fn_out=None, data_nm='bart_phantom', snr_db=30, \
         print('Completed subexperiment for r_pro = {} in {} sec'.format(r_p,time()-start_pro_iter))
     if fn_out != None:
         np.save(fn_out+'_nrmse',nrmse_out)
+        np.save(fn_out+'_r_pro_vec',r_pro_vec,r_retro_vec)
+        np.save(fn_out+'_r_retro_vec',r_retro_vec)
         np.save(fn_out+'_images_l2',images_l2_out)
     return nrmse_out,images_l2_out
