@@ -15,7 +15,7 @@ if not precomputed:
 	n_bart_threads = 8
 	verbose = True
 	for snr_db in snr_db_vals[0:1]:
-	    pro_retro_sense_experiment(fn_out=fn_prefix+'_snrdb{}'.format(snr_db), data_nm='bart_phantom', snr_db=snr_db, \
+	    pro_retro_sense_experiment(fn_out=fn_prefix+'_snrdb{}'.format(snr_db), data_nm=data_nm, snr_db=snr_db, \
 	                               r_retro_vec = r_retro_vec, r_pro_vec=r_pro_vec, \
 	                                n_bart_threads=n_bart_threads,verbose=verbose)
 
